@@ -15,8 +15,8 @@ func Index(s, substr string) int {
 
 func Next(s string, bytepos int) int {
 	// 6 is the max value of utf8 byte
-	for count := 1; count < 7; count++ {
-		if utf8.RuneStart(s[bytepos+count]) {
+	for count := 0; count < 6; count++ {
+		if utf8.RuneStart(s[bytepos+1+count]) {
 			return bytepos + count
 		}
 	}
