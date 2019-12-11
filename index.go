@@ -1,6 +1,7 @@
 package runes
 
 import (
+	"fmt"
 	"strings"
 	"unicode/utf8"
 )
