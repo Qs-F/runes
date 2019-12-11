@@ -5,7 +5,7 @@ import (
 	"unicode/utf8"
 )
 
-// Index returns index number in rune byte
+// Index returns index number in rune
 func Index(s, substr string) int {
 	n := strings.Index(s, substr)
 	if n < 0 {
