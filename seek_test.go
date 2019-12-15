@@ -68,6 +68,20 @@ func TestNext(t *testing.T) {
 		},
 		{
 			Input: i{
+				S: "abc",
+				P: 2,
+			},
+			Must: 2,
+		},
+		{
+			Input: i{
+				S: "あいう",
+				P: 5,
+			},
+			Must: 6,
+		},
+		{
+			Input: i{
 				S: "あいうえお日本語",
 				P: 3,
 			},
@@ -77,7 +91,9 @@ func TestNext(t *testing.T) {
 
 	for _, test := range tests {
 		if n := Next(test.Input.S, test.Input.P); n != test.Must {
-			t.Error(n, test.Input)
+			t.Errorf("expect %d but get %d for %s[%d]\n", test.Must, n, test.Input.S, test.Input.P)
+		} else {
+			t.Logf("get %d for %s[%d]\n", n, test.Input.S, test.Input.P)
 		}
 	}
 }
