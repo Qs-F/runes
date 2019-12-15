@@ -32,7 +32,9 @@ func TestIndex(t *testing.T) {
 
 	for _, test := range tests {
 		if n := Index(test.Input[0], test.Input[1]); n != test.Must {
-			t.Error(n, test.Input)
+			t.Errorf("expect %d but get %d for '%s' of '%s'\n", test.Must, n, test.Input[0], test.Input[1])
+		} else {
+			t.Logf("get %d for '%s' of '%s'\n", test.Must, test.Input[0], test.Input[1])
 		}
 	}
 }
