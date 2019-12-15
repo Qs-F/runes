@@ -1,7 +1,6 @@
 package runes
 
 import (
-	"fmt"
 	"unicode/utf8"
 )
 
@@ -12,6 +11,7 @@ func Count(str string, bytecnt int) int {
 	if bytecnt < 0 {
 		return utf8.RuneCountInString(str)
 	}
-	fmt.Println([]byte(str)[:bytecnt])
-	return utf8.RuneCountInString(str[:bytecnt])
+	l := len(str[:bytecnt])
+	offset := l - Before(str, bytecnt+1) - 1
+	return utf8.RuneCountInString(str[:bytecnt]) - offset
 }
