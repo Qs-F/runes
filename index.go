@@ -10,7 +10,7 @@ func Index(s, substr string) int {
 	if n < 0 {
 		return n
 	}
-	return Count(s, n)
+	return Count(s, n) - 1
 }
 
 func IndexAll(s, substr string) []int {
