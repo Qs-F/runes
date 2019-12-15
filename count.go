@@ -12,6 +12,6 @@ func Count(str string, bytecnt int) int {
 		return utf8.RuneCountInString(str)
 	}
 	l := len(str[:bytecnt])
-	offset := l - Before(str, bytecnt+1) - 1
+	offset := l - Before(str, bytecnt)
 	return utf8.RuneCountInString(str[:bytecnt]) - offset
 }
