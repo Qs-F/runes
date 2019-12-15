@@ -7,6 +7,10 @@ const MAX_BYTE_UTF8 = 6 // 6 is the max value of utf8 byte
 // Before returns the byte start position of before valid rune.
 // If the before valid rune is not found, returns given bytepos.
 func Before(s string, bytepos int) int {
+	if bytepos == 0 {
+		return 0
+	}
+
 	// check bytepos exceeds max possible length
 	if bytepos > len(s)-1+MAX_BYTE_UTF8 {
 		return bytepos
