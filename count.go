@@ -9,9 +9,12 @@ import (
 // If bytecnt < 0 (mostly -1), then counts all the str.
 func Count(str string, bytecnt int) int {
 	if bytecnt < 0 {
-		return utf8.RuneCountInString(str)
+		bytecnt = len(str)
+	}
+	if utf8.ValidString(str[Before(str, bytecnt):bytecnt]) {
+		return utf8.RuneCountInString(str[:bytecnt])
 	}
 	l := len(str[:bytecnt])
-	offset := l - Before(str, bytecnt)
+	offset := l - Before(str, bytecnt) - 1
 	return utf8.RuneCountInString(str[:bytecnt]) - offset
 }
