@@ -27,6 +27,13 @@ func TestBefore(t *testing.T) {
 		},
 		{
 			Input: i{
+				S: "abc",
+				P: 0,
+			},
+			Must: 0,
+		},
+		{
+			Input: i{
 				S: "あいう",
 				P: 5,
 			},
@@ -38,6 +45,13 @@ func TestBefore(t *testing.T) {
 				P: 6,
 			},
 			Must: 3,
+		},
+		{
+			Input: i{
+				S: "あ",
+				P: 0,
+			},
+			Must: 0,
 		},
 	}
 
