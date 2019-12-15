@@ -30,7 +30,7 @@ func TestCount(t *testing.T) {
 				S: "あ",
 				N: 0,
 			},
-			Must: 1,
+			Must: 0,
 		},
 		{
 			Input: Input{
