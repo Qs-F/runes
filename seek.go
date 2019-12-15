@@ -25,12 +25,23 @@ func Next(s string, bytepos int) int {
 	return bytepos
 }
 
+// Before returns the byte start position of before valid rune.
+// If the before valid rune is not found, returns given bytepos.
 func Before(s string, bytepos int) int {
-	// 6 is the max value of utf8 byte
-	for count := 0; count < 7; count++ {
-		if utf8.RuneStart(s[bytepos+count+1]) {
-			return bytepos + count + 1
+	// check bytepos exceeds max possible length
+	if bytepos > len(s)-1+MAX_BYTE_UTF8 {
+		return bytepos
+	}
+
+	max := bytepos - 1
+	if max > len(s)-1 {
+		max = len(s) - 1
+	}
+
+	for cursor := max; cursor > bytepos-1-MAX_BYTE_UTF8; cursor-- {
+		if utf8.RuneStart(s[cursor]) {
+			return cursor
 		}
 	}
-	return -1
+	return bytepos
 }
