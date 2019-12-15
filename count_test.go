@@ -28,6 +28,13 @@ func TestCount(t *testing.T) {
 		{
 			Input: Input{
 				S: "あ",
+				N: 3,
+			},
+			Must: 1,
+		},
+		{
+			Input: Input{
+				S: "あ",
 				N: 0,
 			},
 			Must: 0,
@@ -36,6 +43,13 @@ func TestCount(t *testing.T) {
 			Input: Input{
 				S: "あ",
 				N: 1,
+			},
+			Must: 1,
+		},
+		{
+			Input: Input{
+				S: "あい",
+				N: 3,
 			},
 			Must: 1,
 		},
