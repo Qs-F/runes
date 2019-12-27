@@ -25,7 +25,6 @@ func IndexAll(s, substr string) []int {
 			break
 		}
 		ret = append(ret, n+pos)
-		println(ret, l, n)
 		pos += n + l
 	}
 
