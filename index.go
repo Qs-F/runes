@@ -13,6 +13,7 @@ func Index(s, substr string) int {
 	return Count(s, n)
 }
 
+// IndexAll returns the list of all index number in rune
 func IndexAll(s, substr string) []int {
 	return nil
 }
