@@ -15,5 +15,19 @@ func Index(s, substr string) int {
 
 // IndexAll returns the list of all index number in rune
 func IndexAll(s, substr string) []int {
-	return nil
+	ret := []int{}
+	l := Count(substr, -1)
+
+	pos := 0
+	for {
+		n := Index(s[pos:], substr)
+		if n < 0 {
+			break
+		}
+		ret = append(ret, n+pos)
+		println(ret, l, n)
+		pos += n + l
+	}
+
+	return ret
 }
