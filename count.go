@@ -11,9 +11,11 @@ func Count(str string, bytecnt int) int {
 	if bytecnt < 0 {
 		bytecnt = len(str)
 	}
+
 	if utf8.ValidString(str[Before(str, bytecnt):bytecnt]) {
 		return utf8.RuneCountInString(str[:bytecnt])
 	}
+
 	l := len(str[:bytecnt])
 	offset := l - Before(str, bytecnt) - 1
 	return utf8.RuneCountInString(str[:bytecnt]) - offset
