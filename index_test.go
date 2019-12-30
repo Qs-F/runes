@@ -31,6 +31,20 @@ func TestIndex(t *testing.T) {
 			},
 			Must: -1,
 		},
+		{
+			Input: []string{
+				"abcdefghijk",
+				"",
+			},
+			Must: -1,
+		},
+		{
+			Input: []string{
+				"",
+				"abc",
+			},
+			Must: -1,
+		},
 	}
 
 	for _, test := range tests {
@@ -53,6 +67,41 @@ func TestIndexAll(t *testing.T) {
 				"abc",
 			},
 			Must: []int{0, 3, 6},
+		},
+		{
+			Input: []string{
+				"aaaaaaaa",
+				"a",
+			},
+			Must: []int{0, 1, 2, 3, 4, 5, 6, 7},
+		},
+		{
+			Input: []string{
+				"abcabcabc",
+				"",
+			},
+			Must: []int{},
+		},
+		{
+			Input: []string{
+				"",
+				"abc",
+			},
+			Must: []int{},
+		},
+		{
+			Input: []string{
+				"ああいうえおabcdあ",
+				"あ",
+			},
+			Must: []int{0, 1, 10},
+		},
+		{
+			Input: []string{
+				"ああいうえおabcdあいう",
+				"あ",
+			},
+			Must: []int{0, 1, 10},
 		},
 	}
 
