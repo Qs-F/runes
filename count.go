@@ -20,3 +20,19 @@ func Count(str string, bytecnt int) int {
 	offset := l - Before(str, bytecnt) - 1
 	return utf8.RuneCountInString(str[:bytecnt]) - offset
 }
+
+// Count returns the number of str to runecnt in byte.
+// If runecnt >= 0, then counts str[:runecnt].
+// If runecntj < 0 (mostly -1), then counts all the str.
+func CountByte(str string, runecnt int) int {
+	if runecnt < 0 {
+		runecnt = len(str)
+	}
+
+	if runecnt == 1 {
+		return 0
+	}
+
+	rs := []rune(str)
+	return len(string(rs[:runecnt]))
+}

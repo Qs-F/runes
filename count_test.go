@@ -71,3 +71,38 @@ func TestCount(t *testing.T) {
 		}
 	}
 }
+
+func TestCountByte(t *testing.T) {
+	type Input struct {
+		S string
+		N int
+	}
+	tests := []struct {
+		Input Input
+		Must  int
+	}{
+		{
+			Input: Input{
+				S: "あいう",
+				N: -1,
+			},
+			Must: 15,
+		},
+		{
+			Input: Input{
+				S: "あ",
+				N: 1,
+			},
+			Must: 0,
+		},
+	}
+
+	for _, test := range tests {
+		c := CountByte(test.Input.S, test.Input.N)
+		if c != test.Must {
+			t.Errorf("expect: %d but get %d for %s[%d]\n", test.Must, c, test.Input.S, test.Input.N)
+		} else {
+			t.Logf("get %d for %s[%d]\n", c, test.Input.S, test.Input.N)
+		}
+	}
+}
