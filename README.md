@@ -2,7 +2,9 @@
 
 go pkg inspried by `strings` package, for `runes`.
 
-![](https://github.com/Qs-F/runes/workflows/test/badge.svg)
+![Test](https://github.com/Qs-F/runes/workflows/test/badge.svg)
+
+[![GoDoc](https://godoc.org/github.com/Qs-F/runes?status.svg)](https://godoc.org/github.com/Qs-F/runes)
 
 ## Installation
 
