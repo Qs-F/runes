@@ -13,8 +13,8 @@ For example,
 With this pkg, these points are fixed.
 
 ![Test](https://github.com/Qs-F/runes/workflows/test/badge.svg)
-
 [![GoDoc](https://godoc.org/github.com/Qs-F/runes?status.svg)](https://godoc.org/github.com/Qs-F/runes)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Qs-F/runes)](https://goreportcard.com/report/github.com/Qs-F/runes)
 
 ## Installation
 
